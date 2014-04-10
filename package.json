@@ -1,7 +1,7 @@
 {
   "name": "grunt-edns",
   "description": "grunt task for edns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/allenm/grunt-edns",
   "author": {
     "name": "Allen.M",
