@@ -33,7 +33,7 @@
     "grunt-contrib-nodeunit": "^0.3.3",
     "grunt-contrib-watch":"*",
     "grunt": "~0.4.4",
-    "edns":"*"
+    "edns":">=0.0.6"
   },
   "peerDependencies": {
     "grunt": "~0.4.4"
