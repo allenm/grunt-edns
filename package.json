@@ -1,7 +1,7 @@
 {
   "name": "grunt-edns",
   "description": "grunt task for edns",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/allenm/grunt-edns",
   "author": {
     "name": "Allen.M",
@@ -36,7 +36,7 @@
     "grunt-contrib-nodeunit": "^0.3.3",
     "grunt-contrib-watch":"*",
     "grunt": "~0.4.4",
-    "edns":">=0.0.7"
+    "edns":">=0.0.8"
   },
   "peerDependencies": {
     "grunt": "~0.4.4"
