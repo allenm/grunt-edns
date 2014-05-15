@@ -1,8 +1,6 @@
-# grunt-edns
+# grunt-xdns
 
-开发中，文档稍后补上
-
-> grunt task for edns
+> grunt task for xdns
 
 ## Getting Started
 This plugin requires Grunt `~0.4.4`
@@ -10,28 +8,27 @@ This plugin requires Grunt `~0.4.4`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-edns --save-dev
+npm install grunt-xdns --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-edns');
+grunt.loadNpmTasks('grunt-xdns');
 ```
 
-## The "edns" task
+## The "xdns" task
 
 ### Overview
-In your project's Gruntfile, add a section named `edns` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `xdns` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  edns: {
+  xdns: {
     options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
+        dns:'8.8.8.8',
+        keepalive:true,
+        hostsArr:['$en0$ www.qq.com']
     },
   },
 });
@@ -39,17 +36,25 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
+#### options.dns
+Type: `IP Address`
+Default value: `your system dns`
 
-A string value that is used to do something with whatever.
+The remote dns server.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
 
-A string value that is used to do something else with whatever else.
+#### options.keepalive
+Type: `Boolean`
+Default value: `false`
+
+Keep the server alive indefinitely. Note that if this option is enabled, any tasks specified after this task will never run. By default, once grunt's tasks have completed, the web server stops. This option changes that behavior.
+
+#### options.hostsArr
+Type: `Array`
+Default value: `[]`
+
+The hosts array .  see [xdns readme](https://github.com/allenm/xdns#xdnsinitconfig-%E5%90%AF%E5%8A%A8%E4%B8%80%E4%B8%AA-xdns)
+
 
 ### Usage Examples
 
@@ -58,11 +63,8 @@ In this example, the default options are used to do something with whatever. So 
 
 ```js
 grunt.initConfig({
-  edns: {
+  xdns: {
     options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
   },
 });
 ```
@@ -72,14 +74,21 @@ In this example, custom options are used to do something else with whatever else
 
 ```js
 grunt.initConfig({
-  edns: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
+  xdns: {
+    online:{
+        options: {
+            dns:'8.8.8.8',
+            keepalive:true,
+            hostsArr:['$en0$ www.qq.com']
+        }
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    pre:{
+        options: {
+            dns:'8.8.4.4',
+            keepalive:true,
+            hostsArr:['$en0$ www.qq.com']
+        }
+    }
   },
 });
 ```

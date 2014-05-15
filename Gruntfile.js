@@ -1,6 +1,6 @@
 /*
- * grunt-edns
- * https://github.com/allenm/grunt-edns
+ * grunt-xdns
+ * https://github.com/allenm/grunt-xdns
  *
  * Copyright (c) 2014 Allen.M
  * Licensed under the MIT license.
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    edns: {
+    xdns: {
         qa:{
             options:{
                 dns:'10.232.24.196',
@@ -71,12 +71,12 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'edns', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'xdns', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
 
-  grunt.registerTask('e',['edns:qa']);
+  grunt.registerTask('e',['xdns:qa']);
 
 
 };
