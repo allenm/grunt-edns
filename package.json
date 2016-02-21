@@ -27,19 +27,19 @@
   "scripts": {
     "test": "grunt test"
   },
-  "dependencies":{
-    "xdns":">=0.1.0"
+  "dependencies": {
+    "xdns": ">=0.1.0"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.9.2",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-nodeunit": "^0.3.3",
-    "grunt-contrib-watch":"*",
+    "grunt-contrib-watch": "*",
     "grunt": "~0.4.4",
-    "xdns":">=0.1.0"
+    "xdns": ">=0.1.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.4"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin"
